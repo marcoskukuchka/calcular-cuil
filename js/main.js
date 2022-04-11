@@ -1,13 +1,30 @@
 
 let errorCuit = document.getElementById("cuitInvalido");
 let numeroCuit = document.getElementById("cuil"); 
+const form = document.getElementById("btn_submit");
+
+form.addEventListener("click", function(event) {
+    console.log(event);
+    if (mostrarErrorCuit(numeroCuit.value)) {
+        console.log("es valido")
+    }else{
+        console.log("no es valido")
+
+        event.preventDefault();
+    }
+
+
+
+
+  });
 
 function mostrarErrorCuit(numeroCuit){
     let esValido = validarCuit(numeroCuit);
     if(esValido){
-        errorCuit.innerText = "Cuit/Cuil Valido"
+        return esValido;
     }else{
-        errorCuit.innerText = "Cuit/Cuil Invalido"
+        errorCuit.innerText = "Cuit/Cuil Invalido";
+        return esValido;
     }
 }
 

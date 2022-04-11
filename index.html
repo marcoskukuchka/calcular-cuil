@@ -7,10 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <label for="cuil">Cuil/Cuit</label>
-    <input type="number" name="cuil" id="cuil" onchange="mostrarErrorCuit(this.value)">
-    <p id="cuitInvalido"></p>
+    <form action="#" method="get">
+
+        <label for="cuil">Cuil/Cuit</label>
+        <input type="number" name="cuil" id="cuil" onchange="mostrarErrorCuit(this.value, evt)">
+        <p id="cuitInvalido"></p>
+        <button type="submit" id="btn_submit">enviar</button>
+    </form>
     
 
 
